@@ -8,6 +8,9 @@ RESOURCE_TIMEOUT = 0.0
 
 MAX_TIMEOUT = 90.0
 
+# memory limits
+MAX_LUA_MEMORY = 50000
+
 # Default size of browser window.  As there're no decorations, this affects
 # both "window.inner*" and "window.outer*" values.
 VIEWPORT_SIZE = '1024x768'

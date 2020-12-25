@@ -29,6 +29,9 @@ def parse_opts(jupyter=False, argv=None):
     op.add_option("-f", "--logfile", help="log file")
     op.add_option("-m", "--maxrss", type=float, default=0,
         help="exit if max RSS reaches this value (in MB or ratio of physical mem) (default: %default)")
+    op.add_option("--maxluamem", type=float, default=0,
+        help="gives error if Lua script memory usage reaches this value (in MB or ratio of physical mem) (default: %default)",
+        default=defaults.MAX_LUA_MEMORY)
     op.add_option("--proxy-profiles-path",
         help="path to a folder with proxy profiles")
     op.add_option("--js-profiles-path",
@@ -391,6 +394,8 @@ def main(jupyter=False, argv=None, server_factory=splash_server):
     if argv is None:
         argv = sys.argv
     opts, _ = parse_opts(jupyter, argv)
+    print("masuk")
+    print(opts)
     if opts.version:
         print(__version__)
         sys.exit(0)
