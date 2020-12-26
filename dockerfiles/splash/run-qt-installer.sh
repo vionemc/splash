@@ -11,6 +11,7 @@ fi
 chmod +x "$1" && \
 http_proxy="http://localhost:8080" https_proxy="http://localhost:8080" $command --script "$2" \
     | egrep -v '\[[0-9]+\] Warning: (Unsupported screen format)|((QPainter|QWidget))' && \
+echo "masuk"
 echo $(ls /opt)
 # ls /opt/qt-everywhere-src-6.0.0/ && \
 # #    cat /opt/qt-$QT_SHORT_VERSION/InstallationLog.txt && \
